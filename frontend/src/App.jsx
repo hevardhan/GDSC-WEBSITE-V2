@@ -1,41 +1,34 @@
 import axios from 'axios'
-import React from 'react'
+import React from 'react';
+import Navbar from './components/Navbar'
+import Mesh from './components/mesh'
+import Home from './components/home'
+import Grobj from './components/grobj'
+import Grobj2 from './components/grobj2'
 
-class App extends React.Component {
-state = {
-  details: [],
-}
-componentDidMount(){
-  let data;
-  axios.get('http://127.0.0.1:8000/')
-  .then(res => {
-    data = res.data;
-    this.setState({
-      details:data
-    });
-  })
-  .catch(err => { })
-}
-
-render(){
+function App() {
   return (
-    <div>
-      <header>Data Gen From DJ</header>
-      <hr></hr>
-      {this.state.details.map((output,id)=>
-      (
-        <div key={id}>
-          <div>
-          <h2>{output.employee}</h2>
-          <h2>{output.department}</h2>
-          <img src={`${output.photo}`} alt={`${output.photo}`} />
+    <>
+      <section>
+        <Navbar />
+        <div className="h-full flex flex-col ">
+          <div className="flex-1 z-10">
+            <Home />
+            <div className="bottom-0 left-0 right-0 flex justify-between w-full">
+              <Grobj />
+              <Grobj2 />
+            </div>
+          </div>
+          <div className="flex-1">
+            <Mesh />
           </div>
         </div>
-      ))}
-    </div>
-  )
-}
+      </section>
+      <section>
 
+      </section>
+    </>
+  )
 }
 
 export default App
