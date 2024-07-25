@@ -28,6 +28,9 @@ function App() {
         <h2 class="text-white text-6xl text-center pt-14">About Us</h2>
         <p class="text-white text-2xl text-center pt-2" >Google Developer Student Clubs (GDSC) are community groups for college and university students interested in Google developer technologies.</p>
       </section>
+      <section>
+        <h1>THIS IS A FUCKING TEST</h1>
+      </section>
     </>
   )
 }
