@@ -25,7 +25,7 @@ function App() {
         </div>
       </section>
       <section>
-
+        <h2 class="text-white">Hello World</h2>
       </section>
       <section>
         <h1>THIS IS A FUCKING TEST</h1>
