@@ -25,6 +25,7 @@ function App() {
       <section className="min-h-screen">
         <ContactUsSection />
       </section>
+      
     </>
   );
 }
