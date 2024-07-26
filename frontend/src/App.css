@@ -1,11 +1,5 @@
 @import 'tailwindcss/tailwind.css';
 
-.cursor {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: blue;
-  border-radius: 50%;
-  pointer-events: none; /* Prevent cursor element from interfering with mouse events */
-  transition: transform 0.1s ease-in-out;
+.animation_layer {
+  background-position: bottom center;
 }
