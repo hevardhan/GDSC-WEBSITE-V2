@@ -25,6 +25,9 @@ function App() {
             <Mesh />
           </div>
         </div>
+        <div className="flex-1">
+          <Mesh />
+        </div>
       </section>
       <section>
         <h2 class="text-white text-6xl text-center pt-14">About Us</h2>
@@ -34,7 +37,7 @@ function App() {
         <h1 className="font-michrome">MEET THE TEAM</h1>
       </section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

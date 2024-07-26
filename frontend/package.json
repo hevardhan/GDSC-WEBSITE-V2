@@ -10,8 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@react-spring/parallax": "^9.7.4",
     "@react-spring/web": "^9.7.4",
+=======
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+>>>>>>> d9a00c262c229ba074f9818abfeb4325e9fc893f
     "axios": "^1.7.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

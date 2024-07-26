@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body, h1, h2, h3, p, a, li, div {
+  font-family: 'Michroma', sans-serif;
+}
+
 html{
   background-color: black;
   /* cursor: none; */
