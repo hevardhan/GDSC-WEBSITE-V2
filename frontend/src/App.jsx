@@ -36,6 +36,7 @@ function App() {
       <section className="team">
         <h1 className="font-michrome">MEET THE TEAM</h1>
       </section>
+      
     </>
   );
 }
