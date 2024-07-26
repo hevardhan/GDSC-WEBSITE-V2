@@ -1,11 +1,33 @@
 @import 'tailwindcss/tailwind.css';
 
-.cursor {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: blue;
-  border-radius: 50%;
-  pointer-events: none; /* Prevent cursor element from interfering with mouse events */
-  transition: transform 0.1s ease-in-out;
+.card-members {
+  overflow-x: scroll;
 }
+
+.events-top{
+  /* border: solid; */
+  width: 90%;
+  height: 400px;
+  border-radius: 100px;
+  background: linear-gradient(45deg, #4285F4, #DB4437, #F4B400, #0F9D58);
+  /* background: linear-gradient(45deg, #4285F4, #3367D6, #4B7BEC, #0F9D58); */
+  /* background:linear-gradient(-120deg, #4285f4, #34a853, #fbbc05, #ea4335); */
+  background-size: 300% 300%;
+  animation: gradient 4s ease infinite;
+  display:flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+  }
+  
