@@ -5,6 +5,8 @@ import Mesh from './components/mesh'
 import Home from './components/home'
 import Grobj from './components/grobj'
 import Grobj2 from './components/grobj2'
+import Search from './components/Search'
+import AboutBody from './components/AboutBody'
 
 function App() {
   return (
@@ -24,9 +26,10 @@ function App() {
           </div>
         </div>
       </section>
-      <section>
-        <h2 class="text-white text-6xl text-center pt-14">About Us</h2>
-        <p class="text-white text-2xl text-center pt-2" >Google Developer Student Clubs (GDSC) are community groups for college and university students interested in Google developer technologies.</p>
+      <section className='sizeUp'>
+        <Search/>
+        <AboutBody/>
+        <button className='btn font-michrome ml'style={{ marginLeft: '36px' }}>MORE</button>
       </section>
       <section>
         <h1>THIS IS A FUCKING TEST</h1>
