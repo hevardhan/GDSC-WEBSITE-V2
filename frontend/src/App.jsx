@@ -11,7 +11,7 @@ import EventsTitle from "./components/EventsTitle";
 import EventsCard from "./components/EventsCard";
 import "./App.css";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-
+import ModeSwitch from "./components/ModeSwitch";
 function App() {
   return (
     <>
