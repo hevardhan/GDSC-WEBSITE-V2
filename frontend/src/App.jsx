@@ -9,6 +9,8 @@ import Contact from "./components/ContactUsSection";
 import Members from "./components/Members";
 import EventsTitle from "./components/EventsTitle";
 import EventsCard from "./components/EventsCard";
+import JoinUs from "./components/join";
+import JoinContainer from "./components/JoinContainer";
 import "./App.css";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import ModeSwitch from "./components/ModeSwitch";
@@ -65,8 +67,8 @@ function App() {
         </div>
         </div>
       </section>
-      <section id='join'>
-
+      <section id='join' className="justify-center items-center flex bg-red-500">
+        <JoinContainer />
       </section>
       <Contact/>
     </>
