@@ -39,7 +39,12 @@ const Navbar = () => {
         }}
         className="flex justify-between items-center px-10 pt-5 fixed w-full z-50 bg-black"
       >
+        <a href="#home">
+        <div className='flex items-center gap-4'>
         <img className="w-[75px] flex-shrink-0" src={LOGO} alt="GDSC Logo" />
+        <h1 className='text-white text-3xl'>GDSC</h1>
+        </div>
+        </a>
         <button className="flex-shrink-0" onClick={toggleMenu}>
           <span className="button_top font-michrome">Menu</span>
         </button>

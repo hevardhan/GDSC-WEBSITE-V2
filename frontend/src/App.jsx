@@ -15,7 +15,7 @@ import ModeSwitch from "./components/ModeSwitch";
 function App() {
   return (
     <>
-      <section>
+      <section id='home'>
         <Navbar />
         <div className="h-full flex flex-col">
           <div className="flex-1 animation_layer">
@@ -33,14 +33,14 @@ function App() {
           <Mesh />
         </div>
       </section>
-      <section>
+      <section id='about'>
         <h2 class="text-white text-6xl text-center pt-14">About Us</h2>
         <p class="text-white text-2xl text-center pt-2">
           Google Developer Student Clubs (GDSC) are community groups for college
           and university students interested in Google developer technologies.
         </p>
       </section>
-      <section className="relative flex items-center justify-center">
+      <section className="relative flex items-center justify-center" id='team'>
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="font-michrome text-white text-9xl">MEET THE TEAM</h1>
         </div>
@@ -53,7 +53,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="">
+      <section id='events'>
         <div>
           <EventsTitle />
         </div>
@@ -65,7 +65,10 @@ function App() {
         </div>
         </div>
       </section>
-      <Contact />
+      <section id='join'>
+
+      </section>
+      <Contact/>
     </>
   );
 }

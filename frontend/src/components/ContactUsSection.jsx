@@ -7,7 +7,7 @@ import SocialLinks from './SocialLinks';
 
 const ContactUsSection = () => {
   return (
-    <section className="contact-section">
+    <section className="contact-section"  id='contact'>
       <div className="contact-header">
         <Header />
         <div className="contact-arrow-container">

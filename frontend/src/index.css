@@ -10,6 +10,7 @@ body, h1, h2, h3, p, a, li, div {
 html{
   background-color: black;
   /* cursor: none; */
+  scroll-behavior: smooth;
 }
 
 section {
