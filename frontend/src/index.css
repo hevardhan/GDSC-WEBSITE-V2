@@ -3,13 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
+body, h1, h2, h3, p, a, li, div {
+  font-family: 'Michroma', sans-serif;
+}
+
 html{
   background-color: black;
   /* cursor: none; */
+  scroll-behavior: smooth;
 }
-
 section {
-  height: 150vh;
+  height: 95vh;
   margin-bottom: 1.5rem;
   margin-top: 1.5rem;
   box-sizing: border-box;
