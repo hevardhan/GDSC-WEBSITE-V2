@@ -1,7 +1,15 @@
 @import 'tailwindcss/tailwind.css';
 
 .card-members {
-  overflow-x: scroll;
+  overflow-x: hidden; /* Hide overflow if necessary */
+  width: max-content; 
+}
+
+.mmm{
+  transform: translateX(110vw);
+  width:fit-content;
+	display:flex;
+	flex-wrap:nowrap;
 }
 
 .events-top{
@@ -31,3 +39,5 @@
   }
   }
   
+
+

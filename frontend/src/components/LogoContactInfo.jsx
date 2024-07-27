@@ -4,7 +4,7 @@ const LogoContactInfo = () => {
   return (
     <div className="logo-contact-info flex items-center justify-center">
       <img 
-        src="/public/1668434641684.jpg" 
+        src="/1668434641684.jpg" 
         alt="GDSC Logo" 
         className="logo-img"
       />
