@@ -43,20 +43,6 @@ function App() {
       duration:1
     });
 
-    const container = document.querySelector(".card-members");
-    gsap.to(".mmm", {
-      scrollTrigger: {
-        trigger: ".mmm",
-        start: "top center", // Adjust based on when you want the animation to start
-        end: () => `+=${container.scrollWidth - window.innerWidth}`, // Adjust based on when you want the animation to end
-        scrub: true, // This makes the animation smooth as you scroll
-        // pin: true, // Pin the element during the scroll
-        
-      },
-      x: -container.scrollWidth + window.innerWidth,
-      duration: 1, // Duration of the animation
-    });
-  
   }, []);
 
   return (
@@ -91,24 +77,13 @@ function App() {
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="font-michrome text-white text-9xl">MEET THE TEAM</h1>
         </div>
-        <div className="relative h-full w-full flex card-members" style={{ display: 'flex', flexDirection: 'row' }}>
-          <div className="flex items-center justify-end gap-60 h-full mmm">
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
+        <div className="h-full w-full card-members">
+          <div className="flex items-center justify-end gap-60 h-full mmm w-full">
             <Members />
           </div>
         </div>
       </section>
+
       <section id="events">
         <div>
           <EventsTitle />
@@ -120,7 +95,7 @@ function App() {
             </a>
           </div>
         </div>
-        <div className="justify-center items-center flex">
+        <div className="justify-center items-center flex transform -translate-y-4">
           <View />
         </div>
       </section>

@@ -2,7 +2,7 @@ import React from "react";
 import '../members.css'; 
 const Members = () => {
   return (
-    <div>
+    <div className="panel">
       <div class="card">
         <div class="card-photo"></div>
         <div class="card-title">
