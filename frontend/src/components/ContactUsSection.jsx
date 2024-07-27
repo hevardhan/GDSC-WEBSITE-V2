@@ -7,7 +7,7 @@ import SocialLinks from './SocialLinks';
 
 const ContactUsSection = () => {
   return (
-    <section className="contact-section" id='contact'>
+    <div className="contact-section" id='contact'>
       <div className="contact-header">
         <Header />
         <div className="contact-arrow-container">
@@ -42,7 +42,7 @@ const ContactUsSection = () => {
         <p className="mt-4">Developed with <span className="text-pink-500">💖</span></p>
         <p className='copyright'>Copyright &copy;2024, All rights reserved.</p>
       </div>
-    </section>
+    </div>
   );
 };
 
