@@ -4,7 +4,10 @@
   overflow-x: hidden; /* Hide overflow if necessary */
   width: max-content; 
 }
-
+.animation_layer{
+  /* transform: translateY(25%); */
+  z-index: 10;
+}
 .mmm{
   transform: translateX(110vw);
   width:fit-content;
