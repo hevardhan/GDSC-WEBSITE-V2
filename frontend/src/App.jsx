@@ -4,8 +4,8 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Navbar from "./components/Navbar";
 import Mesh from "./components/mesh";
 import Home from "./components/home";
-// import Grobj from "./components/grobj";
-// import Grobj2 from "./components/grobj2";
+import Grobj from "./components/grobj";
+import Grobj2 from "./components/grobj2";
 import Search from "./components/Search";
 import AboutBody from "./components/AboutBody";
 import Contact from "./components/ContactUsSection";
@@ -23,8 +23,27 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   useEffect(() => {
-    const container = document.querySelector(".card-members");
+    gsap.to(".animation_layer",{
+      scale:0.3,
+      scrollTrigger : {
+        trigger: ".animation_layer",
+        scrub:true,
+        start: "bottom 60%",
+      },
+      duration:1
+    })
+    gsap.to(".mesh-div",{
+      y: -400,
+      z: 20,
+      scrollTrigger : {
+        trigger: ".mesh-div",
+        scrub:true,
+        start: "top 65%",
+      },
+      duration:1
+    });
 
+    const container = document.querySelector(".card-members");
     gsap.to(".mmm", {
       scrollTrigger: {
         trigger: ".mmm",
@@ -44,20 +63,18 @@ function App() {
     <>
       <section id="home">
         <Navbar />
-        <div className="h-full flex flex-col">
-          <div className="flex-1 animation_layer">
+        <div className="h-full">
+          <div className="animation_layer h-2/3">
             <Home />
-            <div className="bottom-0 left-0 right-0 flex justify-between w-full">
-              {/* <Grobj />
-              <Grobj2 /> */}
-            </div>
+
           </div>
-          <div className="flex-1 bg-black animation_layer">
+          <div className="mesh-div bg-black h-1/3 relative">
             <Mesh />
+            {/* <div className="relative">
+              <Grobj />
+              <Grobj2 />
+            </div> */}
           </div>
-        </div>
-        <div className="flex-1">
-          <Mesh />
         </div>
       </section>
       <section className="sizeUp">

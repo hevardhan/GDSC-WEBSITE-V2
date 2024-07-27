@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 const mesh = props => {
   return (
     <div className="w-full flex justify-center items-center">
-        <svg width="100%" height="500px" viewBox="0 0 1280 287" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="100%" height="100%" viewBox="0 0 1280 287" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M46.2853 2.00006L-1854 334.376" stroke="white" stroke-width="3"/>
 <path d="M131.102 2.00006L-1269.78 334.376" stroke="white" stroke-width="3"/>
 <path d="M215.918 2.00006L-831.995 334.376" stroke="white" stroke-width="3"/>
