@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Navbar from "./components/Navbar";
@@ -18,6 +18,7 @@ import JoinContainer from "./components/JoinContainer";
 import "./App.css";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import ModeSwitch from "./components/ModeSwitch";
+import SplashScreen from "./components/SplashScreen";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,8 +46,20 @@ function App() {
 
   }, []);
 
+  const [hideApp, setHideApp] = useState(false);
+
+  useEffect(() => {
+    const hideTimer = setTimeout(() => setHideApp(true), 6000);
+
+    return () => {
+      clearTimeout(hideTimer);
+    }
+  }, []);
+
   return (
     <>
+      <SplashScreen/>
+      <div className={`hide ${hideApp ? 'unhide' : ''}`}>
       <section id="home">
         <Navbar />
         <div className="h-full">
@@ -103,6 +116,7 @@ function App() {
         <JoinContainer />
       </section>
       <Contact />
+      </div>
     </>
   );
 }
