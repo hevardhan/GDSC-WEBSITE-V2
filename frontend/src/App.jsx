@@ -19,6 +19,7 @@ import "./App.css";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import ModeSwitch from "./components/ModeSwitch";
 import SplashScreen from "./components/SplashScreen";
+import MeetTeam from "./components/MeetTeam";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -87,9 +88,7 @@ function App() {
         className="relative flex items-center justify-center overflow-x-auto" // Use overflow-x-auto for debugging
         id="team"
       >
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="font-michrome text-white text-9xl">MEET THE TEAM</h1>
-        </div>
+        <MeetTeam/>
         <div className="h-full w-full card-members">
           <div className="flex items-center justify-end gap-60 h-full mmm w-full">
             <Members />
