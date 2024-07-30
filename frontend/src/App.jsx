@@ -21,6 +21,8 @@ import ModeSwitch from "./components/ModeSwitch";
 import SplashScreen from "./components/SplashScreen";
 import axios from 'axios'
 import MeetTeam from "./components/MeetTeam";
+import Popup from "./components/Popup";
+import GamePopup from "./components/GamePopup";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,12 +63,27 @@ function App() {
     }
   }, []);
 
+  // POPUP STATES:
+  const [popupVisible, setPopupVisible] = useState(false);
+
+  const togglePopup = () => {
+    setPopupVisible(!popupVisible);
+  };
+
+  const [showPopup, setShowPopup] = useState(false);
+
+  const toggleGamePopup = () => {
+    setShowPopup(!showPopup);
+  };
+
   return (
     <>
       {/* <SplashScreen/> */}
       {/* <div className={`hide ${hideApp ? 'unhide' : ''}`}> */}
       <section id="home">
-        <Navbar />
+        <Popup isOpen={popupVisible} onClose={togglePopup} />
+        {showPopup && <GamePopup closePopup={toggleGamePopup} />}
+        <Navbar onHomeClick={toggleGamePopup}/>
         <div className="h-full">
           <div className="animation_layer h-2/3">
             <Home />
@@ -118,7 +135,7 @@ function App() {
       <section id="join" className="justify-center items-center flex">
         <JoinContainer />
       </section>
-      <Contact />
+      <Contact onContactArrowClick={togglePopup}/>
       {/* </div> */}
     </>
   );
