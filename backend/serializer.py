@@ -5,4 +5,13 @@ class ReactSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = React
-        fields = ['employee', 'department', 'photo']
+        fields = ['eventName', 'formLink', 'photo']
+
+
+class ReactSerializer2(serializers.ModelSerializer):
+    
+    class Meta:
+        model = Team
+        fields = ['name', 'position', 'photo']
+
+

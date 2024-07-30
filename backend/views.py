@@ -10,3 +10,7 @@ from rest_framework import generics
 class EmployeeListCreateView(generics.ListCreateAPIView):
     queryset = React.objects.all()
     serializer_class = ReactSerializer
+
+class TeamListCreateView(generics.ListCreateAPIView):
+    queryset = Team.objects.all()
+    serializer_class = ReactSerializer2

@@ -19,11 +19,15 @@ import "./App.css";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import ModeSwitch from "./components/ModeSwitch";
 import SplashScreen from "./components/SplashScreen";
+import axios from 'axios'
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  
+  
   useEffect(() => {
+    window.scrollTo(0, 0);
     gsap.to(".animation_layer",{
       scale:0.3,
       scrollTrigger : {
@@ -58,8 +62,8 @@ function App() {
 
   return (
     <>
-      <SplashScreen/>
-      <div className={`hide ${hideApp ? 'unhide' : ''}`}>
+      {/* <SplashScreen/> */}
+      {/* <div className={`hide ${hideApp ? 'unhide' : ''}`}> */}
       <section id="home">
         <Navbar />
         <div className="h-full">
@@ -116,7 +120,7 @@ function App() {
         <JoinContainer />
       </section>
       <Contact />
-      </div>
+      {/* </div> */}
     </>
   );
 }

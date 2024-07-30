@@ -24,5 +24,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', EmployeeListCreateView.as_view(), name='employee-list-create'),
+    path('events/', EmployeeListCreateView.as_view(), name='employee-list-create'),
+    path('team/', TeamListCreateView.as_view(), name='employee-list-create'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
