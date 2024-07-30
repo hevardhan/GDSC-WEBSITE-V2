@@ -61,7 +61,7 @@
     z-index: 10;
     width: 17rem;
     height: 14rem;
-    /* background-color: var(--pink-500); */
+    background-color: var(--pink-500);
     /* border-color: black; */
     border-radius: 0.5rem;
   }

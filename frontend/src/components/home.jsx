@@ -43,10 +43,10 @@ const home = () => {
   }, []);
   return (
     <div className='text-center h-full flex items-end justify-center homepage'>
-      <h1 ref={glitchElementRef} className="font-poppins text-white text-9xl">
+      <h1 ref={glitchElementRef} className="font-poppins text-white text-9xl no-glitch">
+        <span aria-hidden="true">Google Developer Student Club</span>
         Google Developer Student Club
-        <span>Google Developer Student Club</span>
-        <span>Google Developer Student Club</span>
+        <span aria-hidden="true">Google Developer Student Club</span>
       </h1>
     </div>
     // <div className='text-center h-full flex items-end justify-center homepage'>

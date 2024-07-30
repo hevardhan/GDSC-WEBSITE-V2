@@ -28,7 +28,6 @@ function App() {
   
   
   useEffect(() => {
-    window.scrollTo(0, 0);
     gsap.to(".animation_layer",{
       scale:0.3,
       scrollTrigger : {
@@ -70,7 +69,6 @@ function App() {
         <div className="h-full">
           <div className="animation_layer h-2/3">
             <Home />
-
           </div>
           <div className="mesh-div bg-black h-1/3 relative">
             <Mesh />
