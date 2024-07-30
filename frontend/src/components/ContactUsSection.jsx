@@ -5,12 +5,12 @@ import LogoContactInfo from './LogoContactInfo';
 import Navigation from './Navigation';
 import SocialLinks from './SocialLinks';
 
-const ContactUsSection = () => {
+const ContactUsSection = ({ onContactArrowClick }) => {
   return (
     <div className="contact-section" id='contact'>
       <div className="contact-header">
         <Header />
-        <div className="contact-arrow-container">
+        <div className="contact-arrow-container" onClick={onContactArrowClick}>
           <div className="contact-arrow">
             <button className="button">
               <div className="button-box">
