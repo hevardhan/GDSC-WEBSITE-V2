@@ -1,6 +1,7 @@
 import React from 'react';
 import dinoImage from '/dino.jpg';
 import AboutHead from './AboutHead';
+import AboutButton from "./AboutButton"
 
 const AboutBody = () => {
   return (
@@ -16,14 +17,11 @@ const AboutBody = () => {
           <div className="mt-20 relative">
             <p className="text-white text-xs">&lt;p&gt;</p>
             <p className="text-white my-2 text-lg leading-relaxed p-4">
-              <span className='text-green-500'>Lorem ipsum</span> dolor sit amet,
-              consectetur adipiscing elit.
-              Integer mollis felis ut
-              vulputate fermentum.
-              Praesent nec risus <span className='text-green-500'>purus</span>.
+             At <span className='text-green-500'>GDSC SIT</span>,we innovate by using our resources to foster learning, skill enhancement, and industry connections through hands-on projects and workshops.
             </p>
             <p className="text-white text-xs absolute right-0 bottom-0">&lt;/p&gt;</p>
           </div>
+          <AboutButton/>
         </div>
         <div className="w-full max-w-sm mx-8">
             <img src={dinoImage} alt="dino" className="h-64" />
