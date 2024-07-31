@@ -18,6 +18,7 @@ import axios from 'axios'
 import MeetTeam from "./components/MeetTeam";
 import Popup from "./components/Popup";
 import GamePopup from "./components/GamePopup";
+import BackToTop from "./components/BackToTop";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -205,6 +206,7 @@ function App() {
         <JoinContainer />
       </section>
       <Contact onContactArrowClick={togglePopup} />
+      <BackToTop />
       {/* </div> */}
     </>
   );
