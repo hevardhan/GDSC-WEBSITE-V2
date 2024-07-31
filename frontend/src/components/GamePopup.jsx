@@ -41,7 +41,7 @@ const GamePopup = ({ closePopup }) => {
             <canvas id="game" width="960" height="540"></canvas>
             <article className="game-content">
               <h1 className="game-title">
-                <span>C</span><span>o</span><span>l</span><span>o</span><span>r</span><span> </span><span>B</span><span>l</span><span>a</span><span>s</span><span>t</span>
+                <span>Color Blast</span>
               </h1>
               <p className="game-text">Use the <code className="game-code">Left</code> and <code className="game-code">Right</code> arrows or <code className="game-code">A</code> and <code className="game-code">D</code> keys to move, <code className="game-code">Spacebar</code> to shoot.</p>
             </article>
