@@ -167,9 +167,6 @@ function App() {
       <section className="sizeUp" id="about">
         <Search />
         <AboutBody />
-        <button className="btn font-michrome ml" style={{ marginLeft: "36px" }}>
-          MORE
-        </button>
       </section>
       <section
         className="relative flex items-center justify-center overflow-x-auto" // Use overflow-x-auto for debugging
