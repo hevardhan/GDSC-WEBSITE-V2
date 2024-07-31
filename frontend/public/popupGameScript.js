@@ -4,8 +4,8 @@
     var Game = {
         init: function () {
             this.c = document.getElementById("game");
-            this.c.width = this.c.width;
-            this.c.height = this.c.height;
+            this.c.width = 800;
+            this.c.height = 400;
             this.ctx = this.c.getContext("2d");
             this.color = "rgba(20,20,20,.7)";
             this.bullets = [];
@@ -120,7 +120,8 @@
         },
 
         clear: function () {
-            this.ctx.fillStyle = Game.color;
+            this.ctx.clearRect(0, 0, this.c.width, this.c.height);
+            this.ctx.fillStyle = "#000000";
             this.ctx.fillRect(0, 0, this.c.width, this.c.height);
         },
 
@@ -153,6 +154,7 @@
             this.ctx.fillText("Score: " + this.score, 8, 20);
             this.ctx.fillText("Lives: " + (this.maxLives - this.life), 8, 40);
         },
+
 
         loop: function () {
             if (!Game.paused) {
