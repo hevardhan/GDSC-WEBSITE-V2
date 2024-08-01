@@ -46,7 +46,11 @@ const AboutHead = () => {
   }, []);
 
   return (
+<<<<<<< HEAD
     <h1 ref={glitchElementRef} className="glitch text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl ml-14">
+=======
+    <h1 ref={glitchElementRef} className="glitch text-white text-4xl md:text-7xl ml-6 md:ml-14">
+>>>>>>> 19a843b46006fb243d5e54519bc8561ddb8069d0
       <span aria-hidden="true">About Us</span>
       About Us
       <span aria-hidden="true">About Us</span>
