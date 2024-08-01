@@ -1,234 +1,287 @@
 /* ContactUsSection.css */
 
 .contact-section {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(106, 106, 106);
+  color: #fff;
+  height: 25vh;
+  position: relative;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.header-content .small-text {
+  padding-left: 5vw;
+  font-size: 0.75rem;
+  text-align: left;
+  color: rgb(239, 239, 239);
+}
+
+
+.header-content h1 {
+  font-size: 3rem;
+  margin: 0;
+  position: relative;
+  transform: translateX(70%);
+}
+
+.contact-arrow-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.contact-arrow {
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  border-radius: 50%;
+  padding: 1rem;
+  box-sizing: content-box;
+}
+
+.logo-contact-info {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.info-text {
+  padding-left: 1.8em;
+  text-align: center;
+}
+
+.contact-text {
+  margin-top: 0;
+  margin-left: 1rem;
+  text-align: left;
+}
+
+.navigation {
+  margin-top: 2em;
+  line-height: 0.8em;
+  text-align: right;
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation li {
+  margin: 10px 0;
+}
+
+.navigation a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.copyright {
+  font-size: 0.6em;
+  margin-top: 1.69em;
+}
+
+/* ================================== */
+
+.button {
+  transform: rotateY(180deg);
+  display: block;
+  position: relative;
+  width: 56px;
+  height: 56px;
+  margin: 0;
+  overflow: hidden;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  scale: 1.69;
+}
+
+.button:before,
+.button:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 7px;
+}
+
+.button:before {
+  border: 4px solid rgb(255, 255, 255);
+  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.button:after {
+  border: 4px solid #f6f6f6;
+  transform: scale(1.3);
+  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
+}
+
+.button:hover:before,
+.button:focus:before {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.button:hover:after,
+.button:focus:after {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.button-box {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.button-elem {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 17px 18px 0 18px;
+  transform: rotate(180deg);
+  fill: rgb(255, 255, 255);
+}
+
+
+.button:hover .button-box,
+.button:focus .button-box {
+  transition: 0.4s;
+  transform: translateX(-56px);
+}
+
+/* =================================== */
+
+.parent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.child {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.child:hover {
+  background-color: black;
+  background-position: -100px 100px, -100px 100px;
+  transform: rotate3d(0.5, 1, 0, 30deg);
+  transform: perspective(180px) rotateX(60deg) translateY(2px);
+  box-shadow: 0px 10px 10px rgb(1, 49, 182);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+}
+
+.SocialButton img {
+  background-color: black;
+  border-radius: 20%;
+}
+
+.SocialButton:hover {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate3d(0px, 0px, 15px) perspective(180px) rotateX(-35deg) translateY(2px);
+  border-radius: 50%;
+}
+
+@media (max-width: 1080px) {
+  .header-content h1 {
+    transform: translateX(10%);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-header {
+    flex-direction: column;
+    height: auto;
     background-color: #000;
-    color: #fff;
-    padding: 20px;
+  }
+
+  .header-content {
+    padding: 10px;
+    order: 1;
+  }
+
+  .header-content .small-text p {
+    display: none;
+  }
+
+  .header-content h1 {
+    transform: translateX(0%);
+    font-size: 28px;
+  }
+
+  .contact-section {
+    padding: 10px;
+  }
+
+  .contact-arrow-container {
+    margin-top: 10px;
+    order: 2;
+  }
+
+  .logo-contact-info,
+  .navigation {
+    margin-top: 10px;
+  }
+
+  .navigation {
     text-align: center;
   }
-  
-  .contact-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: rgb(106, 106, 106);
-    color: #fff;
-    height: 25vh;
-    position: relative;
-  }
-  
-  .header-content {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-  }
-  
-  .header-content .small-text {
-    padding-left: 5vw;
-    font-size: 0.75rem;
-    text-align: left;
-    color: rgb(239, 239, 239);
-  }
-  
-  .header-content h1 {
-    font-size: 3rem;
-    margin: 0;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .contact-arrow-container {
-    position: absolute;
-    right: 5vw;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  .contact-arrow {
-    font-size: 3rem;
-    color: rgb(28, 28, 28);
-    border-radius: 50%;
-    padding: 1rem;
-    box-sizing: content-box;
-  }
-  
-  .logo-contact-info {
-    margin-top: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .logo-img {
-    width: 150px; /* Adjust size as needed */
-    height: auto;
-    border-radius: 50%;
-  }
 
-  .info-text{
-    padding-left: 1.8em;
-  }
-  
-  .contact-text {
-    margin-top: 0; /* Align with the logo */
-    margin-left: 1rem;
-    text-align: left;
-  }
-  
-  .navigation {
-    margin-top: 2em;
-    line-height: 0.8em;
-    text-align: right; /* Align navigation links to the right */
-  }
-  
-  .navigation ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .navigation li {
-    margin: 10px 0;
-  }
-  
   .navigation a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
-
-  .copyright {
-    font-size: 0.6em;
-    margin-top: 1.69em;
-  }
-
-  /* ================================== */
-
-  .button {
-    transform: rotateY(180deg);
-    display: block;
-    position: relative;
-    width: 56px;
-    height: 56px;
-    margin: 0;
-    overflow: hidden;
-    outline: none;
-    background-color: transparent;
-    cursor: pointer;
-    border: 0;
-    scale: 1.69;
-  }
-  
-  .button:before,
-  .button:after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    inset: 7px;
-  }
-  
-  .button:before {
-    border: 4px solid rgb(35, 35, 35);
-    transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
-      transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
-  }
-  
-  .button:after {
-    border: 4px solid #000000;
-    transform: scale(1.3);
-    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-      transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    opacity: 0;
-  }
-  
-  .button:hover:before,
-  .button:focus:before {
-    opacity: 0;
-    transform: scale(0.7);
-    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-      transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-  
-  .button:hover:after,
-  .button:focus:after {
-    opacity: 1;
-    transform: scale(1);
-    transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
-      transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
-  }
-  
-  .button-box {
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  .button-elem {
-    display: block;
-    width: 20px;
-    height: 20px;
-    margin: 17px 18px 0 18px;
-    transform: rotate(180deg);
-    fill: rgb(35, 35, 35);
-  }
-
-  
-  .button:hover .button-box,
-  .button:focus .button-box {
-    transition: 0.4s;
-    transform: translateX(-56px);
-  }
-
-  /* =================================== */
-
-  .parent {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .child {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform-style: preserve-3d;
-    transition: all 0.5s ease-in-out;
-    border-radius: 50%;
-    margin: 0 5px;
-  }
-  
-  .child:hover {
-    background-color: black;
-    background-position: -100px 100px, -100px 100px;
-    transform: rotate3d(0.5, 1, 0, 30deg);
-    transform: perspective(180px) rotateX(60deg) translateY(2px);
-    box-shadow: 0px 10px 10px rgb(1, 49, 182);
-  }
-  
-  button {
-    border: none;
-    background-color: transparent;
-    font-size: 20px;
-  }
-
-  .SocialButton img {
-    background-color: black;
-    border-radius: 20%;
-  }
-  
-  .SocialButton:hover {
-    width: inherit;
-    height: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translate3d(0px, 0px, 15px) perspective(180px) rotateX(-35deg) translateY(2px);
-    border-radius: 50%;
-  }
+}

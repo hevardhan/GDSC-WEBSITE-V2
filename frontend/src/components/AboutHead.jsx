@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 
 const AboutHead = () => {
@@ -10,7 +11,7 @@ const AboutHead = () => {
     if (isGlitchingRef.current) return;
     isGlitchingRef.current = true;
     glitchElementRef.current?.classList.remove('no-glitch');
-    
+
     glitchTimeoutRef.current = setTimeout(() => {
       stopGlitch();
     }, 1000); // 1000ms = 2 iterations of 500ms
@@ -45,7 +46,7 @@ const AboutHead = () => {
   }, []);
 
   return (
-    <h1 ref={glitchElementRef} className="glitch text-white text-7xl ml-14">
+    <h1 ref={glitchElementRef} className="glitch text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl ml-14">
       <span aria-hidden="true">About Us</span>
       About Us
       <span aria-hidden="true">About Us</span>

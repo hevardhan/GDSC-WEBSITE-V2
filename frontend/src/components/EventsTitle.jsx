@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import '../index.css'
+import '../index.css';
 
 const EventsTitle = () => {
   const glitchElementRef = useRef(null);
@@ -45,13 +45,13 @@ const EventsTitle = () => {
 
   return (
     <div className='flex justify-center items-center'>
-      <h1 ref={glitchElementRef} className="glitch text-white text-9xl">
+      <h1 ref={glitchElementRef} className="glitch text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-white">
         Events
-        <span>Events</span>
-        <span>Events</span>
+        <span aria-hidden="true">Events</span>
+        <span aria-hidden="true">Events</span>
       </h1>
     </div>
-    
+
   );
 }
 
