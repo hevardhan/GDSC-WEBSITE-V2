@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const home = () => {
+const Home = () => {
   const glitchElementRef = useRef(null);
   const isGlitchingRef = useRef(false);
   const glitchTimeoutRef = useRef(null);
@@ -41,21 +41,16 @@ const home = () => {
       window.removeEventListener('scroll', handleScroll, false);
     };
   }, []);
+
   return (
     <div className='text-center h-full flex items-end justify-center homepage'>
-      <h1 ref={glitchElementRef} className="font-poppins text-white text-9xl no-glitch">
+      <h1 ref={glitchElementRef} className="font-poppins text-white text-[16vw] sm:text-[14vw] md:text-[12vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[8vw] break-words leading-tight no-glitch">
         <span aria-hidden="true">Google Developer Student Club</span>
         Google Developer Student Club
         <span aria-hidden="true">Google Developer Student Club</span>
       </h1>
     </div>
-    // <div className='text-center h-full flex items-end justify-center homepage'>
-    //     <h1 className='font-poppins text-white text-9xl' >
-    //         Google Developer Student Club
-    //     </h1>
-    // </div>
-  )
+  );
 }
 
-
-export default home
+export default Home;

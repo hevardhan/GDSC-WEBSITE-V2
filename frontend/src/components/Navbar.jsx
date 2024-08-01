@@ -10,16 +10,15 @@ const Navbar = ({ onHomeClick }) => {
   const handleScroll = () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     if (scrollTop > lastScrollTop) {
-      setNavbarStyle({ top: '-100px' });
+      setNavbarStyle({ top: '-100px' }); // Hides the Navbar on scroll down
     } else {
-      setNavbarStyle({ top: '0' });
+      setNavbarStyle({ top: '0' }); // Shows the Navbar on scroll up
     }
-    setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop); // For Mobile or negative scrolling
+    setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
   };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -37,13 +36,11 @@ const Navbar = ({ onHomeClick }) => {
           ...navbarStyle,
           transition: 'top 0.3s',
         }}
-        className="flex justify-between items-center px-10 pt-5 fixed w-full z-50 bg-black"
+        className="fixed top-0 left-0 right-0 z-50 bg-black flex justify-between items-center px-4 md:px-10 py-3"
       >
-        <a href="#home" onClick={onHomeClick}>
-        <div className='flex items-center gap-4'>
-        <img className="w-[75px] flex-shrink-0" src={LOGO} alt="GDSC Logo" />
-        <h1 className='text-white text-3xl'>GDSC</h1>
-        </div>
+        <a href="#home" onClick={onHomeClick} className="flex items-center gap-4">
+          <img className="w-16 md:w-20 lg:w-24" src={LOGO} alt="GDSC Logo" />
+          <h1 className="text-xl md:text-2xl lg:text-3xl text-white">GDSC</h1>
         </a>
         <button className="flex-shrink-0" onClick={toggleMenu}>
           <span className="button_top font-michrome">Menu</span>

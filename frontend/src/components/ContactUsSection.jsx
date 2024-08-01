@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import '../ContactUsSection.css'; // Ensure this is linked for additional styles
+import '../ContactUsSection.css'; // Continue to use for specific styles not covered by Tailwind
 import LogoContactInfo from './LogoContactInfo';
 import Navigation from './Navigation';
 import SocialLinks from './SocialLinks';

@@ -1,14 +1,13 @@
 import React, { useEffect, useRef } from 'react';
-import '../index.css'
+import '../index.css';
 
 const MeetTeam = () => {
+  const glitchElementRef = useRef(null);
+  const isGlitchingRef = useRef(false);
+  const glitchTimeoutRef = useRef(null);
+  const lastScrollTopRef = useRef(0);
 
-    const glitchElementRef = useRef(null);
-    const isGlitchingRef = useRef(false);
-    const glitchTimeoutRef = useRef(null);
-    const lastScrollTopRef = useRef(0);
-
-    const startGlitch = () => {
+  const startGlitch = () => {
     if (isGlitchingRef.current) return;
     isGlitchingRef.current = true;
     glitchElementRef.current?.classList.remove('no-glitch');
@@ -19,22 +18,22 @@ const MeetTeam = () => {
     }, 1000);
   };
 
-    const stopGlitch = () => {
-        isGlitchingRef.current = false;
-        glitchElementRef.current?.classList.remove('glitch');
-        glitchElementRef.current?.classList.add('no-glitch');
-        if (glitchTimeoutRef.current) {
-        clearTimeout(glitchTimeoutRef.current);
-        }
+  const stopGlitch = () => {
+    isGlitchingRef.current = false;
+    glitchElementRef.current?.classList.remove('glitch');
+    glitchElementRef.current?.classList.add('no-glitch');
+    if (glitchTimeoutRef.current) {
+      clearTimeout(glitchTimeoutRef.current);
+    }
   };
 
-    useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
-        const st = window.pageYOffset || document.documentElement.scrollTop;
-        if (st > lastScrollTopRef.current || st < lastScrollTopRef.current) {
-            startGlitch();
-        }
-        lastScrollTopRef.current = st <= 0 ? 0 : st;
+      const st = window.pageYOffset || document.documentElement.scrollTop;
+      if (st > lastScrollTopRef.current || st < lastScrollTopRef.current) {
+        startGlitch();
+      }
+      lastScrollTopRef.current = st <= 0 ? 0 : st;
     };
 
     window.addEventListener('scroll', handleScroll, false);
@@ -42,20 +41,17 @@ const MeetTeam = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll, false);
     };
-    }, []);
-    return(
-      <div>
-        <div className='absolute top-80 left-0 w-full flex items-center justify-center '>
-            <h1 ref={glitchElementRef} className="font-michrome text-white text-9xl">
-                MEET THE TEAM
-                <span>MEET THE TEAM</span>
-                <span>MEET THE TEAM</span>
-            </h1>
-        </div>
-      </div>
-        // <div className="absolute inset-0 flex items-center justify-center">
-        //   <h1 className="font-michrome text-white text-9xl">MEET THE TEAM</h1>
-        // </div>
-    )
+  }, []);
+
+  return (
+    <div className='absolute top-80 left-0 w-full flex items-center justify-center'>
+      <h1 ref={glitchElementRef} className="font-michrome text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+        MEET THE TEAM
+        <span aria-hidden="true">MEET THE TEAM</span>
+        <span aria-hidden="true">MEET THE TEAM</span>
+      </h1>
+    </div>
+  );
 }
-export default MeetTeam
+
+export default MeetTeam;
