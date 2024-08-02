@@ -1,16 +1,41 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Header from './Header';
 import '../ContactUsSection.css'; // Continue to use for specific styles not covered by Tailwind
 import LogoContactInfo from './LogoContactInfo';
 import Navigation from './Navigation';
 import SocialLinks from './SocialLinks';
 
-const ContactUsSection = ({ onContactArrowClick }) => {
+const ContactUsSection = () => {
+  const [isFormVisible, setFormVisible] = useState(false);
+
+  const handleContactArrowClick = () => {
+    setFormVisible(!isFormVisible);
+  };
+
+  useEffect(() => {
+    let timer;
+    if (isFormVisible) {
+      const script = document.createElement('script');
+      script.src = "https://static-bundles.visme.co/forms/vismeforms-embed.js";
+      script.async = true;
+      document.body.appendChild(script);
+
+      timer = setTimeout(() => {
+        setFormVisible(false);
+      }, 100000); // Adjust the time (in milliseconds) as needed
+
+      return () => {
+        document.body.removeChild(script);
+        clearTimeout(timer);
+      };
+    }
+  }, [isFormVisible]);
+
   return (
     <div className="contact-section" id='contact'>
       <div className="contact-header">
         <Header />
-        <div className="contact-arrow-container" onClick={onContactArrowClick}>
+        <div className="contact-arrow-container" onClick={handleContactArrowClick}>
           <div className="contact-arrow">
             <button className="button">
               <div className="button-box">
@@ -42,6 +67,9 @@ const ContactUsSection = ({ onContactArrowClick }) => {
         <p className="mt-4">Developed with <span className="text-pink-500">💖</span></p>
         <p className='copyright'>Copyright &copy;2024, All rights reserved.</p>
       </div>
+      {isFormVisible && (
+        <div className="visme_d" data-title="Email Contact Form" data-url="n0ed46zn-email-contact-form?fullPage=true" data-domain="forms" data-full-page="true" data-min-height="100vh" data-form-id="85732"></div>
+      )}
     </div>
   );
 };
