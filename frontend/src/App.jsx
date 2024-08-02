@@ -25,18 +25,18 @@ function App() {
   useEffect(() => {
     const races = document.querySelector(".races");
     const team = document.querySelector("#team");
-    
+
     function getScrollAmount() {
-        return -(races.scrollWidth);
+      return -(races.scrollWidth);
     }
     function getScrollAmount2() {
-        return -(races.scrollWidth - window.innerWidth);
+      return -(races.scrollWidth - window.innerWidth);
     }
 
     const tween = gsap.to(races, {
-        x: getScrollAmount,
-        duration: 3,
-        ease: "none",
+      x: getScrollAmount,
+      duration: 3,
+      ease: "none",
     });
 
     gsap.to("#about", {
@@ -66,32 +66,32 @@ function App() {
     console.log(window.innerWidth);
     console.log(window.outerWidth);
     ScrollTrigger.create({
-        trigger: ".racesWrapper",
-        start: "top top",
-        end: () => `+=${getScrollAmount() * -1}`,
-        pin: true,
-        animation: tween,
-        markers: true,
-        scrub: 1,
-        invalidateOnRefresh: true,
-        onEnter: () => {
-            gsap.set(".racesWrapper", {
-              x: 0,
-              y: 0,
-            });
-        },
-        onLeave: () => {
-            gsap.set(".racesWrapper", {
-              x: 0,
-              y: 0,
-            });
-        },
-        onLeaveBack: () => {
-            gsap.set(".racesWrapper", {
-              x: 0,
-              y: 0,
-            });
-        },
+      trigger: ".racesWrapper",
+      start: "top top",
+      end: () => `+=${getScrollAmount() * -1}`,
+      pin: true,
+      animation: tween,
+      markers: true,
+      scrub: 1,
+      invalidateOnRefresh: true,
+      onEnter: () => {
+        gsap.set(".racesWrapper", {
+          x: 0,
+          y: 0,
+        });
+      },
+      onLeave: () => {
+        gsap.set(".racesWrapper", {
+          x: 0,
+          y: 0,
+        });
+      },
+      onLeaveBack: () => {
+        gsap.set(".racesWrapper", {
+          x: 0,
+          y: 0,
+        });
+      },
     });
 
   }, []);
@@ -135,7 +135,9 @@ function App() {
   const [showPopup, setShowPopup] = useState(false);
 
   const toggleGamePopup = () => {
-    setShowPopup(!showPopup);
+    if (window.innerWidth > 768) {
+      setShowPopup(!showPopup);
+    }
   };
 
   return (
@@ -185,7 +187,7 @@ function App() {
           <EventsTitle />
         </div>
         <div className="h-3/4 items-center flex justify-center">
-          <div className="events-top">
+          <div className="events-top h-72 sm:h-96">
             <a href="youtube.com">
               <EventsCard />
             </a>
@@ -195,7 +197,7 @@ function App() {
           <View />
         </div>
       </section>
-      <section id="join" className="justify-center items-center flex">
+      <section id="join" className="justify-center items-center flex hidden sm:flex">
         <JoinContainer />
       </section>
       <Contact />
