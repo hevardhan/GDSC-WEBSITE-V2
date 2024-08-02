@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Header';
-import '../ContactUsSection.css'; // Continue to use for specific styles not covered by Tailwind
+import '../ContactUsSection.css'; // Ensure this is linked for additional styles
 import LogoContactInfo from './LogoContactInfo';
 import Navigation from './Navigation';
 import SocialLinks from './SocialLinks';
@@ -33,9 +33,9 @@ const ContactUsSection = () => {
 
   return (
     <div className="contact-section" id='contact'>
-      <div className="contact-header">
+      <div className="contact-header sm:bg-zinc-500 h-2 sm:h-64">
         <Header />
-        <div className="contact-arrow-container" onClick={handleContactArrowClick}>
+        <div className="contact-arrow-container hidden sm:block" onClick={handleContactArrowClick}>
           <div className="contact-arrow">
             <button className="button">
               <div className="button-box">
