@@ -16,7 +16,6 @@ import "./App.css";
 import SplashScreen from "./components/SplashScreen";
 import axios from 'axios'
 import MeetTeam from "./components/MeetTeam";
-import Popup from "./components/Popup";
 import GamePopup from "./components/GamePopup";
 import BackToTop from "./components/BackToTop";
 
@@ -132,11 +131,6 @@ function App() {
   }, []);
 
   // POPUP STATES:
-  const [popupVisible, setPopupVisible] = useState(false);
-
-  const togglePopup = () => {
-    setPopupVisible(!popupVisible);
-  };
 
   const [showPopup, setShowPopup] = useState(false);
 
@@ -149,7 +143,6 @@ function App() {
       {/* <SplashScreen/> */}
       {/* <div className={`hide ${hideApp ? 'unhide' : ''}`}> */}
       <section id="home">
-        <Popup isOpen={popupVisible} onClose={togglePopup} />
         {showPopup && <GamePopup closePopup={toggleGamePopup} />}
         <Navbar onHomeClick={toggleGamePopup} />
         <div className="h-full">
@@ -205,7 +198,7 @@ function App() {
       <section id="join" className="justify-center items-center flex">
         <JoinContainer />
       </section>
-      <Contact onContactArrowClick={togglePopup} />
+      <Contact />
       <BackToTop />
       {/* </div> */}
     </>
