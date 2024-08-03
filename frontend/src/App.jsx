@@ -63,7 +63,6 @@ function App() {
         end: () => `+=${getScrollAmount2() * -1}`,
         pin: true,
         animation: tween,
-        markers: true,
         scrub: 1,
         invalidateOnRefresh: true,
         onEnter: () => {
