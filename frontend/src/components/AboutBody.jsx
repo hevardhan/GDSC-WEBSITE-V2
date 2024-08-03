@@ -21,7 +21,7 @@ const AboutBody = () => {
             </p>
             <p className="text-white text-xs absolute right-0 bottom-0">&lt;/p&gt;</p>
           </div>
-          <AboutButton />
+          {/* <AboutButton /> */}
         </div>
         <div className="hidden md:block w-full md:max-w-sm mx-8">
           <img src={dinoImage} alt="dino" className="h-32 sm:h-40 md:h-64" />
