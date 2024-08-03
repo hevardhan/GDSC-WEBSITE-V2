@@ -25,8 +25,8 @@
 }
 
 .racesWrapper {
+  position: absolute;
   overflow-x: hidden;
-  white-space: nowrap;
 }
 
 /* #team{

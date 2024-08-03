@@ -30,12 +30,13 @@ function App() {
         return -(races.scrollWidth);
     }
     function getScrollAmount2() {
-        return -(races.scrollWidth - window.innerWidth);
+        return -(races.scrollWidth - window.innerWidth );
     }
+
 
     const tween = gsap.to(races, {
         x: getScrollAmount,
-        duration: 3,
+        duration: 1,
         ease: "none",
     });
 
@@ -45,30 +46,21 @@ function App() {
         start: "top center",
         onEnter: () => {
           gsap.set("#team", {
-            height: () => `+=${getScrollAmount() * -1}`,
-          });
-        },
-        onLeave: () => {
-          gsap.set("#team", {
-            height: 'auto',
-          });
-        },
-        onLeaveBack: () => {
-          gsap.set("#team", {
-            height: `-=${getScrollAmount() * -1}`,
+            height: () => `${getScrollAmount() * -1}`,
           });
         },
       },
       duration: 1,
     });
 
-    console.log(getScrollAmount);
-    console.log(window.innerWidth);
-    console.log(window.outerWidth);
+    console.log("SCROLL AMOUNT:", getScrollAmount());
+    console.log("WINDOW INNER WIDTH:", window.innerWidth);
+    console.log("WINDOW OUTER WIDTH:", window.outerWidth);
+    
     ScrollTrigger.create({
         trigger: ".racesWrapper",
         start: "top top",
-        end: () => `+=${getScrollAmount() * -1}`,
+        end: () => `+=${getScrollAmount2() * -1}`,
         pin: true,
         animation: tween,
         markers: true,
@@ -83,14 +75,14 @@ function App() {
         onLeave: () => {
             gsap.set(".racesWrapper", {
               x: 0,
-              y: 0,
+              y: `${getScrollAmount2() * -1}`,
             });
         },
         onLeaveBack: () => {
-            gsap.set(".racesWrapper", {
-              x: 0,
-              y: 0,
-            });
+          gsap.set(".racesWrapper", {
+            x: 0,
+            y: 0,
+          });
         },
     });
 
@@ -163,7 +155,7 @@ function App() {
         <AboutBody />
       </section>
       <section
-        className="relative flex items-center justify-center overflow-x-auto" // Use overflow-x-auto for debugging
+        className="flex relative items-center justify-center overflow-x-auto" // Use overflow-x-auto for debugging
         id="team"
       >
         <div className="h-full w-full racesWrapper">
