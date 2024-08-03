@@ -1,24 +1,29 @@
 @import 'tailwindcss/tailwind.css';
 
 .card-members {
-  overflow-x: hidden; /* Hide overflow if necessary */
-  width: max-content; 
+  overflow-x: hidden;
+  /* Hide overflow if necessary */
+  width: max-content;
 }
-.animation_layer{
+
+.animation_layer {
   /* transform: translateY(25%); */
   z-index: 10;
 }
+
 .mmm {
   display: flex;
-  width: max-content; /* Ensures the container width adjusts based on content */
-  overflow: hidden; /* Hides overflow if any */
+  width: max-content;
+  /* Ensures the container width adjusts based on content */
+  overflow: hidden;
+  /* Hides overflow if any */
 }
 
 .races {
-	width:fit-content;
-	display:flex;
+  width: fit-content;
+  display: flex;
   justify-content: flex-end;
-	flex-wrap:nowrap;
+  flex-wrap: nowrap;
   white-space: nowrap;
   width: max-content;
   transform: translateX(100%);
@@ -32,76 +37,78 @@
 /* #team{
   width: 1000vh
 } */
-.events-top{
+.events-top {
   /* border: solid; */
   width: 90%;
-  height: 400px;
   border-radius: 100px;
   background: linear-gradient(45deg, #4285F4, #DB4437, #F4B400, #0F9D58);
   /* background: linear-gradient(45deg, #4285F4, #3367D6, #4B7BEC, #0F9D58); */
   /* background:linear-gradient(-120deg, #4285f4, #34a853, #fbbc05, #ea4335); */
   background-size: 300% 300%;
   animation: gradient 4s ease infinite;
-  display:flex;
+  display: flex;
   gap: 4rem;
   justify-content: center;
   align-items: center;
 }
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
-  }
-  
+}
 
 
-  #horizontal-scoll {
-    padding: 200px 0;
-  }
-  
-  .horizontal-scoll-wrapper {
-    overflow: hidden;
-    height: 525px;
-  }
-  
-  .horizontal {
-    display: flex;
-    height: 100%;
-  }
-  
-  .horizontal > div {
-    display: flex;
-    flex-shrink: 0;
-    padding: 0 5px;
-  }
-  
-  .horizontal > div:first-child {
-    padding: 0 5px 0 15px;
-  }
-  
-  .horizontal > div:last-child {
-    padding: 0 15px 0 5px;
-  }
-  
-  .horizontal .card {
-    align-items: stretch;
-    width: 540px;
-    padding: 50px 40px;
-    background: #6e4ce1;
-    border-radius: 38px;
-    color: #f6f2e8;
-  }
-  
-  .hide {
-    display: none;
-  }
 
-  .unhide {
-    display: block;
-  }
+#horizontal-scoll {
+  padding: 200px 0;
+}
+
+.horizontal-scoll-wrapper {
+  overflow: hidden;
+  height: 525px;
+}
+
+.horizontal {
+  display: flex;
+  height: 100%;
+}
+
+.horizontal>div {
+  display: flex;
+  flex-shrink: 0;
+  padding: 0 5px;
+}
+
+.horizontal>div:first-child {
+  padding: 0 5px 0 15px;
+}
+
+.horizontal>div:last-child {
+  padding: 0 15px 0 5px;
+}
+
+.horizontal .card {
+  align-items: stretch;
+  width: 540px;
+  padding: 50px 40px;
+  background: #6e4ce1;
+  border-radius: 38px;
+  color: #f6f2e8;
+}
+
+.hide {
+  display: none;
+}
+
+.unhide {
+  display: block;
+}

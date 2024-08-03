@@ -4,8 +4,8 @@ import "../eventsCard.css";
 const EventsCard = () => {
   return (
     <div>
-      <div class="events-card">
-        <div class="sub-card category">
+      <div class="events-card scale-50 sm:scale-100 ">
+        <div class="sub-card category ">
           <span class="text_span">Web Weave</span>
           <svg
             class="icon_svg"

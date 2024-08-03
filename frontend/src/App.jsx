@@ -25,9 +25,9 @@ function App() {
   useEffect(() => {
     const races = document.querySelector(".races");
     const team = document.querySelector("#team");
-    
+
     function getScrollAmount() {
-        return -(races.scrollWidth);
+      return -(races.scrollWidth);
     }
     function getScrollAmount2() {
         return -(races.scrollWidth - window.innerWidth );
@@ -127,8 +127,43 @@ function App() {
   const [showPopup, setShowPopup] = useState(false);
 
   const toggleGamePopup = () => {
-    setShowPopup(!showPopup);
+    if (window.innerWidth > 768) {
+      setShowPopup(!showPopup);
+    }
   };
+
+  // Backend Data Fetch:
+
+  const [teamDetails, setTeamDetails] = useState([]);
+  const [eventDetails, setEventDetails] = useState([]);
+
+  useEffect(() => {
+    let teamData;
+    axios.get('http://localhost:8000/team/')
+    .then(res => {
+      teamData = res.data;
+      setTeamDetails(teamData);
+      console.log("Team Data:", teamData);
+      teamData.forEach(member => {
+        console.log(`Name: ${member.name}, Position: ${member.position}`);
+      });
+    })
+    .catch(err => console.error(err));
+  }, []);
+
+  useEffect(() => {
+    let eventData;
+    axios.get('http://localhost:8000/events/')
+    .then(res => {
+      eventData = res.data;
+      setEventDetails(eventData);
+      console.log("Event Data:", eventData);
+      eventData.forEach(event => {
+        console.log(`Event Name: ${event.eventName}, Form Link: ${event.formLink}`);
+      });
+    })
+    .catch(err => console.error(err));
+  }, []);
 
   return (
     <>
@@ -177,7 +212,7 @@ function App() {
           <EventsTitle />
         </div>
         <div className="h-3/4 items-center flex justify-center">
-          <div className="events-top">
+          <div className="events-top h-72 sm:h-96">
             <a href="youtube.com">
               <EventsCard />
             </a>
@@ -187,7 +222,7 @@ function App() {
           <View />
         </div>
       </section>
-      <section id="join" className="justify-center items-center flex">
+      <section id="join" className="justify-center items-center flex hidden sm:flex">
         <JoinContainer />
       </section>
       <Contact />
