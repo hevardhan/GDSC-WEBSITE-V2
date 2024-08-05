@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Navbar from "./components/Navbar";
@@ -14,30 +15,44 @@ import View from "./components/view";
 import JoinContainer from "./components/JoinContainer";
 import "./App.css";
 import SplashScreen from "./components/SplashScreen";
-import axios from 'axios'
+import axios from "axios";
 import MeetTeam from "./components/MeetTeam";
 import GamePopup from "./components/GamePopup";
 import BackToTop from "./components/BackToTop";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// class App extends React.Component {
+//   state = { details : [], }
+
+//   componentDidMount(){
+
+//   }
+// }
+
 function App() {
+  const membersComponents = [];
+
+  for (let i = 1; i <= 10; i++) {
+    membersComponents.push(
+      <Members name={`Member ${i}`} position={`Position ${i}`} />
+    );
+  }
   useEffect(() => {
     const races = document.querySelector(".races");
     const team = document.querySelector("#team");
 
     function getScrollAmount() {
-      return -(races.scrollWidth);
+      return -races.scrollWidth;
     }
     function getScrollAmount2() {
-        return -(races.scrollWidth - window.innerWidth );
+      return -(races.scrollWidth - window.innerWidth);
     }
 
-
     const tween = gsap.to(races, {
-        x: getScrollAmount,
-        duration: 1,
-        ease: "none",
+      x: getScrollAmount,
+      duration: 3,
+      ease: "none",
     });
 
     gsap.to("#about", {
@@ -56,35 +71,34 @@ function App() {
     console.log("SCROLL AMOUNT:", getScrollAmount());
     console.log("WINDOW INNER WIDTH:", window.innerWidth);
     console.log("WINDOW OUTER WIDTH:", window.outerWidth);
-    
-    ScrollTrigger.create({
-        trigger: ".racesWrapper",
-        start: "top top",
-        end: () => `+=${getScrollAmount2() * -1}`,
-        pin: true,
-        animation: tween,
-        scrub: 1,
-        invalidateOnRefresh: true,
-        onEnter: () => {
-            gsap.set(".racesWrapper", {
-              x: 0,
-              y: 0,
-            });
-        },
-        onLeave: () => {
-            gsap.set(".racesWrapper", {
-              x: 0,
-              y: `${getScrollAmount2() * -1}`,
-            });
-        },
-        onLeaveBack: () => {
-          gsap.set(".racesWrapper", {
-            x: 0,
-            y: 0,
-          });
-        },
-    });
 
+    ScrollTrigger.create({
+      trigger: ".racesWrapper",
+      start: "top top",
+      end: () => `+=${getScrollAmount2() * -1}`,
+      pin: true,
+      animation: tween,
+      scrub: 1,
+      invalidateOnRefresh: true,
+      onEnter: () => {
+        gsap.set(".racesWrapper", {
+          x: 0,
+          y: 0,
+        });
+      },
+      onLeave: () => {
+        gsap.set(".racesWrapper", {
+          x: 0,
+          y: `${getScrollAmount2() * -1}`,
+        });
+      },
+      onLeaveBack: () => {
+        gsap.set(".racesWrapper", {
+          x: 0,
+          y: 0,
+        });
+      },
+    });
   }, []);
 
   useEffect(() => {
@@ -108,7 +122,6 @@ function App() {
       },
       duration: 1,
     });
-
   }, []);
 
   const [hideApp, setHideApp] = useState(false);
@@ -138,95 +151,91 @@ function App() {
 
   useEffect(() => {
     let teamData;
-    axios.get('http://localhost:8000/team/')
-    .then(res => {
-      teamData = res.data;
-      setTeamDetails(teamData);
-      console.log("Team Data:", teamData);
-      teamData.forEach(member => {
-        console.log(`Name: ${member.name}, Position: ${member.position}`);
-      });
-    })
-    .catch(err => console.error(err));
+    axios
+      .get("http://localhost:8000/team/")
+      .then((res) => {
+        teamData = res.data;
+        setTeamDetails(teamData);
+        console.log("Team Data:", teamData);
+        teamData.forEach((member) => {
+          console.log(`Name: ${member.name}, Position: ${member.position}`);
+        });
+      })
+      .catch((err) => console.error(err));
   }, []);
 
   useEffect(() => {
     let eventData;
-    axios.get('http://localhost:8000/events/')
-    .then(res => {
-      eventData = res.data;
-      setEventDetails(eventData);
-      console.log("Event Data:", eventData);
-      eventData.forEach(event => {
-        console.log(`Event Name: ${event.eventName}, Form Link: ${event.formLink}`);
-      });
-    })
-    .catch(err => console.error(err));
+    axios
+      .get("http://localhost:8000/events/")
+      .then((res) => {
+        eventData = res.data;
+        setEventDetails(eventData);
+        console.log("Event Data:", eventData);
+        eventData.forEach((event) => {
+          console.log(
+            `Event Name: ${event.eventName}, Form Link: ${event.formLink}`
+          );
+        });
+      })
+      .catch((err) => console.error(err));
   }, []);
 
   return (
     <>
-      {/* <SplashScreen/> */}
-      {/* <div className={`hide ${hideApp ? 'unhide' : ''}`}> */}
-      <section id="home">
-        {showPopup && <GamePopup closePopup={toggleGamePopup} />}
-        <Navbar onHomeClick={toggleGamePopup} />
-        <div className="h-full">
-          <div className="animation_layer h-2/3">
-            <Home />
-          </div>
-          <div className="mesh-div bg-black h-1/3 relative">
-            <Mesh />
-            {/* <div className="relative">
-              <Grobj />
-              <Grobj2 />
-            </div> */}
-          </div>
-        </div>
-      </section>
-      <section className="sizeUp" id="about">
-        <Search />
-        <AboutBody />
-      </section>
-      <section
-        className="flex relative items-center justify-center overflow-x-auto" // Use overflow-x-auto for debugging
-        id="team"
-      >
-        <div className="h-full w-full racesWrapper">
-          <MeetTeam />
-          <div className="flex items-center gap-60 h-full races w-full">
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-            <Members />
-          </div>
-        </div>
-      </section>
-      <section id="events">
-        <div>
-          <EventsTitle />
-        </div>
-        <div className="h-3/4 items-center flex justify-center">
-          <div className="events-top h-72 sm:h-96">
-            <a href="youtube.com">
-              <EventsCard />
-            </a>
-          </div>
-        </div>
-        <div className="justify-center items-center flex transform -translate-y-4">
-          <View />
-        </div>
-      </section>
-      <section id="join" className="justify-center items-center flex hidden sm:flex">
-        <JoinContainer />
-      </section>
-      <Contact />
-      <BackToTop />
-      {/* </div> */}
+
+          {/* <SplashScreen/> */}
+          {/* <div className={`hide ${hideApp ? 'unhide' : ''}`}> */}
+          <section id="home">
+            {showPopup && <GamePopup closePopup={toggleGamePopup} />}
+            <Navbar onHomeClick={toggleGamePopup} />
+            <div className="h-full">
+              <div className="animation_layer h-2/3">
+                <Home />
+              </div>
+              <div className="mesh-div bg-black h-1/3 relative">
+                <Mesh />
+              </div>
+            </div>
+          </section>
+          <section className="sizeUp" id="about">
+            <Search />
+            <AboutBody />
+          </section>
+          <section
+            className="flex relative items-center justify-center overflow-x-auto" // Use overflow-x-auto for debugging
+            id="team"
+          >
+            <div className="h-full w-full racesWrapper">
+              <MeetTeam />
+              <div className="flex items-center gap-60 h-full races w-full">
+                {membersComponents}
+              </div>
+            </div>
+          </section>
+          <section id="events">
+            <div>
+              <EventsTitle />
+            </div>
+            <div className="h-3/4 items-center flex justify-center">
+              <div className="events-top h-72 sm:h-96">
+                <a href="youtube.com">
+                  <EventsCard />
+                </a>
+              </div>
+            </div>
+            <div className="justify-center items-center flex transform -translate-y-4">
+              <View />
+            </div>
+          </section>
+          <section
+            id="join"
+            className="justify-center items-center flex hidden sm:flex"
+          >
+            <JoinContainer />
+          </section>
+          <Contact />
+          <BackToTop />
     </>
   );
 }

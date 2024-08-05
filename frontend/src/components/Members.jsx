@@ -1,13 +1,13 @@
 import React from "react";
 import '../members.css'; 
-const Members = () => {
+const Members = ({name, position}) => {
   return (
     <div className="panel">
       <div class="card">
         <div class="card-photo"></div>
         <div class="card-title">
-          JOHN DOE <br></br>
-          <span>Fullstack dev &amp; UX UI</span>
+          {name} <br></br>
+          <span>{position}</span>
         </div>
         <div class="card-socials">
           <button class="card-socials-btn facebook">

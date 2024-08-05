@@ -61,8 +61,11 @@
     z-index: 10;
     width: 17rem;
     height: 14rem;
-    background-color: var(--pink-500);
+    /* background-color: var(--pink-500); */
+    /* background-image: url('https://www.imgacademy.com/sites/default/files/img-academy-boarding-school-worlds-most-dedicated.jpg'); */
     /* border-color: black; */
+    background-size: cover;
+    background-position: center;
     border-radius: 0.5rem;
   }
   .card_container::before {
