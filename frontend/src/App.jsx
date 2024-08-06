@@ -32,10 +32,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const membersComponents = [];
+  
 
   for (let i = 1; i <= 10; i++) {
     membersComponents.push(
-      <Members name={`Member ${i}`} position={`Position ${i}`} />
+      <Members key={`${i}`} name={`Member ${i}`} position={`Position ${i}`} />
     );
   }
   useEffect(() => {
@@ -144,42 +145,6 @@ function App() {
     }
   };
 
-  // Backend Data Fetch:
-
-  const [teamDetails, setTeamDetails] = useState([]);
-  const [eventDetails, setEventDetails] = useState([]);
-
-  useEffect(() => {
-    let teamData;
-    axios
-      .get("http://localhost:8000/team/")
-      .then((res) => {
-        teamData = res.data;
-        setTeamDetails(teamData);
-        console.log("Team Data:", teamData);
-        teamData.forEach((member) => {
-          console.log(`Name: ${member.name}, Position: ${member.position}`);
-        });
-      })
-      .catch((err) => console.error(err));
-  }, []);
-
-  useEffect(() => {
-    let eventData;
-    axios
-      .get("http://localhost:8000/events/")
-      .then((res) => {
-        eventData = res.data;
-        setEventDetails(eventData);
-        console.log("Event Data:", eventData);
-        eventData.forEach((event) => {
-          console.log(
-            `Event Name: ${event.eventName}, Form Link: ${event.formLink}`
-          );
-        });
-      })
-      .catch((err) => console.error(err));
-  }, []);
 
   return (
     <>

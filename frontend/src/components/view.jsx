@@ -3,11 +3,11 @@ import "../view.css";
 const view = () => {
   return (
     <a href="/events">
-    <button class="learn-more">
-      <span aria-hidden="true" class="circle">
-        <span class="icon arrow"></span>
+    <button className="learn-more">
+      <span aria-hidden="true" className="circle">
+        <span className="icon arrow"></span>
       </span>
-      <span class="button-text font-sans">View More</span>
+      <span className="button-text font-sans">View More</span>
     </button>
     </a>
   );
