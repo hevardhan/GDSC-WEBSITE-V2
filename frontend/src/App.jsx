@@ -32,13 +32,41 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const membersComponents = [];
-  
+  const [memberData, setMemberData] = useState([]);
+  const [eventsData, setEventsData] = useState([]);
 
-  for (let i = 1; i <= 10; i++) {
-    membersComponents.push(
-      <Members key={`${i}`} name={`Member ${i}`} position={`Position ${i}`} />
-    );
+  const membersAPI = 'http://localhost:8000/team/';
+  const eventsAPI = 'http://localhost:8000/events/';
+  
+  const fetchMemberData = async () => {
+    const response = await axios.get(membersAPI);
+    setMemberData(response.data);
+    return response.data;
   }
+
+  const fetchEventsData = async () => {
+    const response = await axios.get(eventsAPI);
+    setEventsData(response.data);
+    return response.data;
+  }
+
+  useEffect(() => {
+    fetchMemberData();
+    fetchEventsData();
+  }, []);
+
+  memberData.map((member, index) => {
+    membersComponents.push(
+      <Members key={index} name={member.Name} position={member.Position} facebook={member.Facebook_Link}
+      github={member.Github_Link} linkedin={member.Linkedin_Link}/>
+    );
+  })
+
+  // for (let i = 1; i <= 10; i++) {
+  //   membersComponents.push(
+  //     <Members key={`${i}`} name={`Member ${i}`} position={`Position ${i}`} />
+  //   );
+  // }
   useEffect(() => {
     const races = document.querySelector(".races");
     const team = document.querySelector("#team");
