@@ -22,23 +22,14 @@ import BackToTop from "./components/BackToTop";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// class App extends React.Component {
-//   state = { details : [], }
-
-//   componentDidMount(){
-
-//   }
-// }
-
 function App() {
   const membersComponents = [];
-  
-
   for (let i = 1; i <= 10; i++) {
     membersComponents.push(
       <Members key={`${i}`} name={`Member ${i}`} position={`Position ${i}`} />
     );
   }
+
   useEffect(() => {
     const races = document.querySelector(".races");
     const team = document.querySelector("#team");
@@ -128,7 +119,7 @@ function App() {
   const [hideApp, setHideApp] = useState(false);
 
   useEffect(() => {
-    const hideTimer = setTimeout(() => setHideApp(true), 6000);
+    const hideTimer = setTimeout(() => setHideApp(true), 5500);
 
     return () => {
       clearTimeout(hideTimer);
@@ -136,7 +127,6 @@ function App() {
   }, []);
 
   // POPUP STATES:
-
   const [showPopup, setShowPopup] = useState(false);
 
   const toggleGamePopup = () => {
@@ -145,62 +135,63 @@ function App() {
     }
   };
 
-
   return (
     <>
-
-          {/* <SplashScreen/> */}
-          {/* <div className={`hide ${hideApp ? 'unhide' : ''}`}> */}
-          <section id="home">
-            {showPopup && <GamePopup closePopup={toggleGamePopup} />}
-            <Navbar onHomeClick={toggleGamePopup} />
-            <div className="h-full">
-              <div className="animation_layer h-2/3">
-                <Home />
-              </div>
-              <div className="mesh-div bg-black h-1/3 relative">
-                <Mesh />
-              </div>
-            </div>
-          </section>
-          <section className="sizeUp" id="about">
-            <Search />
-            <AboutBody />
-          </section>
-          <section
-            className="flex relative items-center justify-center overflow-x-auto" // Use overflow-x-auto for debugging
-            id="team"
-          >
-            <div className="h-full w-full racesWrapper">
-              <MeetTeam />
-              <div className="flex items-center gap-60 h-full races w-full">
-                {membersComponents}
-              </div>
-            </div>
-          </section>
-          <section id="events">
-            <div>
-              <EventsTitle />
-            </div>
-            <div className="h-3/4 items-center flex justify-center">
-              <div className="events-top h-72 sm:h-96">
-                <a href="youtube.com">
-                  <EventsCard />
-                </a>
-              </div>
-            </div>
-            <div className="justify-center items-center flex transform -translate-y-4">
-              <View />
-            </div>
-          </section>
-          <section
-            id="join"
-            className="justify-center items-center flex hidden sm:flex"
-          >
-            <JoinContainer />
-          </section>
-          <Contact />
-          <BackToTop />
+      {!hideApp && (
+        <div className="overlay">
+          <SplashScreen />
+        </div>
+      )}
+      <section id="home">
+        {showPopup && <GamePopup closePopup={toggleGamePopup} />}
+        <Navbar onHomeClick={toggleGamePopup} />
+        <div className="h-full">
+          <div className="animation_layer h-2/3">
+            <Home />
+          </div>
+          <div className="mesh-div bg-black h-1/3 relative">
+            <Mesh />
+          </div>
+        </div>
+      </section>
+      <section className="sizeUp" id="about">
+        <Search />
+        <AboutBody />
+      </section>
+      <section
+        className="flex relative items-center justify-center overflow-x-auto" // Use overflow-x-auto for debugging
+        id="team"
+      >
+        <div className="h-full w-full racesWrapper">
+          <MeetTeam />
+          <div className="flex items-center gap-60 h-full races w-full">
+            {membersComponents}
+          </div>
+        </div>
+      </section>
+      <section id="events">
+        <div>
+          <EventsTitle />
+        </div>
+        <div className="h-3/4 items-center flex justify-center">
+          <div className="events-top h-72 sm:h-96">
+            <a href="youtube.com">
+              <EventsCard />
+            </a>
+          </div>
+        </div>
+        <div className="justify-center items-center flex transform -translate-y-4">
+          <View />
+        </div>
+      </section>
+      <section
+        id="join"
+        className="justify-center items-center flex hidden sm:flex"
+      >
+        <JoinContainer />
+      </section>
+      <Contact />
+      <BackToTop />
     </>
   );
 }
