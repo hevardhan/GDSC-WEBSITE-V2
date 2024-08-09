@@ -300,7 +300,7 @@ function App() {
         </div>
         <div className="h-3/4 items-center flex justify-center">
           <div className="events-top h-72 sm:h-96">
-            <a href="youtube.com">
+            <a href="https://gdsc-st.onrender.com/" target="_blank">
               <EventsCard />
             </a>
           </div>

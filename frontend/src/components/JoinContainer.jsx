@@ -10,7 +10,7 @@ const JoinContainer = () => {
       <div className='jj'>
       </div>
       <div className="sp items-center flex justify-center">
-
+        <a href="https://gdsc.community.dev/symbiosis-institute-of-technology-pune-india/" target="_blank">
         <button className="sparkle-button">
           <span className="spark"></span>
 
@@ -22,6 +22,7 @@ const JoinContainer = () => {
           </svg>
           <span className="text">Join Us</span>
         </button>
+        </a>
         <div className="bodydrop"></div>
         <span aria-hidden="true" className="particle-pen">
           <svg className="particle" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
