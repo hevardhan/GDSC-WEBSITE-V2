@@ -253,11 +253,11 @@ function App() {
 
   return (
     <>
-      {!hideApp && (
+      {/* {!hideApp && (
         <div className="overlay">
           <SplashScreen />
         </div>
-      )}
+      )} */}
       <section id="home">
         {showPopup && <GamePopup closePopup={toggleGamePopup} />}
         <Navbar onHomeClick={toggleGamePopup} />

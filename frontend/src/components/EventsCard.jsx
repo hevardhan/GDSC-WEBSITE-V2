@@ -6,7 +6,7 @@ const EventsCard = () => {
     <div>
       <div className="events-card scale-50 sm:scale-100 ">
         <div className="sub-card category ">
-          <span className="text_span">Web Weave</span>
+          <span className="text_span">Shark tank</span>
           <svg
             className="icon_svg"
             xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +16,7 @@ const EventsCard = () => {
           </svg>
         </div>
         <div className="card_container" style={{
-          backgroundImage: `url('https://media.licdn.com/dms/image/D4D22AQGjd2p14W91Aw/feedshare-shrink_800/0/1709192959559?e=2147483647&v=beta&t=8cMPdnGDOom0ENDFDCCETljsMd7ru6ruSD0MM3zsyXw')`
+          backgroundImage: `url('/shark.png')`
         }}>
           <svg
             className="image"
@@ -30,7 +30,7 @@ const EventsCard = () => {
           </svg>
         </div>
         <div className="sub-card named">
-          <span className="text_span">8 March 2024</span>
+          <span className="text_span">10 Aug 2024</span>
         </div>
       </div>
     </div>
