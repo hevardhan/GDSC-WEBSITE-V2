@@ -24,9 +24,125 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const membersComponents = [];
-  for (let i = 1; i <= 10; i++) {
+
+  // BACKEND DATA FETCH STUFF
+  // const [memberData, setMemberData] = useState([]);
+  //  const [eventsData, setEventsData] = useState([]);
+
+  //  const membersAPI = 'http://localhost:8000/team/';
+  //  const eventsAPI = 'http://localhost:8000/events/';
+
+  //  const fetchMemberData = async () => {
+  //    const response = await axios.get(membersAPI);
+  //    setMemberData(response.data);
+  //    return response.data;
+  //  }
+
+  //  const fetchEventsData = async () => {
+  //    const response = await axios.get(eventsAPI);
+  //    setEventsData(response.data);
+  //    return response.data;
+  //  }
+
+  //  useEffect(() => {
+  //    fetchMemberData();
+  //    fetchEventsData();
+  //  }, []);
+
+  //  memberData.map((member, index) => {
+  //    membersComponents.push(
+  //      <Members key={index} 
+  //      name={member.Name} 
+  //      position={member.Position} 
+  //      facebook={member.Facebook_Link}
+  //      github={member.Github_Link} 
+  //      linkedin={member.Linkedin_Link}
+  //      />
+  //    );
+  //  })
+
+  const memberDetails = [
+    {
+      Name: 'Yajushreshtha Shukla',
+      Position: 'Core Lead',
+      Facebook_Link: 'https://www.instagram.com',
+      Linkedin_Link: 'https://www.linkedin.com/in/yajushreshtha-shukla/',
+      Github_Link: 'https://github.com'
+    },
+    {
+      Name: 'Divyansh Kumar',
+      Position: 'CP Lead',
+      Facebook_Link: 'https://www.instagram.com',
+      Linkedin_Link: 'https://www.linkedin.com/in/divyanshhkr/',
+      Github_Link: 'https://github.com'
+    },
+    {
+      Name: 'Hevardhan',
+      Position: 'WebDev Lead',
+      Facebook_Link: 'https://www.instagram.com',
+      Linkedin_Link: 'https://www.linkedin.com/in/hevardhan-saravanan-33642024a/',
+      Github_Link: 'https://github.com'
+    },
+    {
+      Name: 'Manan Bhimjiyani',
+      Position: 'Flutter Lead',
+      Facebook_Link: 'https://www.instagram.com',
+      Linkedin_Link: 'https://www.linkedin.com/in/mananbhimjiyani/',
+      Github_Link: 'https://github.com'
+    },
+    {
+      Name: 'Yash Parkhi',
+      Position: 'GameDev Lead',
+      Facebook_Link: 'https://www.instagram.com',
+      Linkedin_Link: 'https://www.linkedin.com/in/yash-parkhi-737773217/',
+      Github_Link: 'https://github.com'
+    },
+    {
+      Name: 'Gautam Rajhans',
+      Position: 'Cloud Lead',
+      Facebook_Link: 'https://www.instagram.com',
+      Linkedin_Link: 'https://www.linkedin.com/in/gautam-rajhans-06b648198/',
+      Github_Link: 'https://github.com'
+    },
+    {
+      Name: 'Dhairya Mehra',
+      Position: 'DevOps Lead',
+      Facebook_Link: 'https://www.instagram.com',
+      Linkedin_Link: 'https://www.linkedin.com/in/dhairya-mehra-705a36203/',
+      Github_Link: 'https://github.com'
+    },
+    {
+      Name: 'Soham Phadke',
+      Position: 'Android Lead',
+      Facebook_Link: 'https://www.instagram.com',
+      Linkedin_Link: 'https://www.linkedin.com/in/soham-phadke-b18673241/',
+      Github_Link: 'https://github.com'
+    },
+    {
+      Name: 'Aaradhya Badal',
+      Position: 'AI Lead',
+      Facebook_Link: 'https://www.instagram.com',
+      Linkedin_Link: 'https://www.linkedin.com/in/aaradhya-badal-502777249/',
+      Github_Link: 'https://github.com'
+    },
+    {
+      Name: 'Ria Vinod',
+      Position: 'Socials Lead',
+      Facebook_Link: 'https://www.instagram.com',
+      Linkedin_Link: 'https://www.linkedin.com/in/ria-vinod/',
+      Github_Link: 'https://github.com'
+    }
+  ];
+
+  for (let i = 0; i < memberDetails.length; i++) {
     membersComponents.push(
-      <Members key={`${i}`} name={`Member ${i}`} position={`Position ${i}`} />
+      <Members key={`${i}`} 
+      name={memberDetails[i].Name} 
+      position={memberDetails[i].Position}
+      facebook={memberDetails[i].Facebook_Link} 
+      linkedin={memberDetails[i].Linkedin_Link} 
+      github={memberDetails[i].Github_Link} 
+      />
     );
   }
 
