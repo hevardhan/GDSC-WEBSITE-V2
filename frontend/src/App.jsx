@@ -251,6 +251,15 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    const alertShown = sessionStorage.getItem("alertShown");
+
+    if (window.innerWidth < 640 && !alertShown) {
+      alert("Please rotate your mobile for better experience");
+      sessionStorage.setItem("alertShown", "true"); // Mark alert as shown
+    }
+  }, []);
+
   return (
     <>
       {/* {!hideApp && (
