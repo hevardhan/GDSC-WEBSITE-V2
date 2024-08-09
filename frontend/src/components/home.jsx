@@ -44,7 +44,7 @@ const Home = () => {
 
   return (
     <div className='text-center h-full flex items-end justify-center homepage'>
-      <h1 ref={glitchElementRef} className="font-poppins text-white text-[16vw] sm:text-[14vw] md:text-[12vw] lg:text-[10vw] xl:text-[9vw] 2xl:text-[8vw] break-words leading-tight no-glitch">
+      <h1 ref={glitchElementRef} className="font-poppins text-white text-[8vw] break-words leading-tight no-glitch">
         <span aria-hidden="true">Google Developer Student Club</span>
         Google Developer Student Club
         <span aria-hidden="true">Google Developer Student Club</span>

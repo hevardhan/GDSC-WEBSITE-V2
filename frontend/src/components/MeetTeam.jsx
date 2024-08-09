@@ -45,7 +45,7 @@ const MeetTeam = () => {
 
   return (
     <div className='absolute top-80 left-0 w-full flex items-center justify-center'>
-      <h1 ref={glitchElementRef} className="font-michrome text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+      <h1 ref={glitchElementRef} className="font-michrome text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-center">
         MEET THE TEAM
         <span aria-hidden="true">MEET THE TEAM</span>
         <span aria-hidden="true">MEET THE TEAM</span>
