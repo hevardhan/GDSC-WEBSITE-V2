@@ -13,16 +13,21 @@ const Members = ({name, position, facebook, linkedin, github}) => {
           <button className="card-socials-btn facebook">
             <a href={facebook} target="_blank" rel="noopener noreferrer">
             <svg
-              className="icon"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              viewBox="0 0 24 24"
-              id="Layer_21"
-              height="24"
-              data-name="Layer 21"
-            >
+             xmlns="http://www.w3.org/2000/svg"
+             width="24"
+             height="24"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             strokeWidth="2"
+             strokeLinecap="round"
+             strokeLinejoin="round"
+             className="icon"
+          >
               <title></title>
-              <path d="M16.75,9H13.5V7a1,1,0,0,1,1-1h2V3H14a4,4,0,0,0-4,4V9H8v3h2v9h3.5V12H16Z"></path>
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="#323232" fill="none"></rect>
+              <circle cx="12" cy="12" r="4" stroke="#323232" fill="none"></circle>
+              <circle cx="18" cy="6" r="1" stroke='#323232' fill="#323232"></circle>
             </svg>
             </a>
           </button>
