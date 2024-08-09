@@ -65,72 +65,72 @@ function App() {
     {
       Name: 'Yajushreshtha Shukla',
       Position: 'Core Lead',
-      Facebook_Link: 'https://www.instagram.com',
+      Facebook_Link: 'https://www.instagram.com/daym_yaju/',
       Linkedin_Link: 'https://www.linkedin.com/in/yajushreshtha-shukla/',
-      Github_Link: 'https://github.com'
+      Github_Link: 'https://github.com/Soyvor'
     },
     {
       Name: 'Divyansh Kumar',
       Position: 'CP Lead',
-      Facebook_Link: 'https://www.instagram.com',
+      Facebook_Link: 'https://www.instagram.com/divyanshkumarr_/#',
       Linkedin_Link: 'https://www.linkedin.com/in/divyanshhkr/',
       Github_Link: 'https://github.com'
     },
     {
       Name: 'Hevardhan',
       Position: 'WebDev Lead',
-      Facebook_Link: 'https://www.instagram.com',
+      Facebook_Link: 'https://www.instagram.com/its_hevardhan/',
       Linkedin_Link: 'https://www.linkedin.com/in/hevardhan-saravanan-33642024a/',
-      Github_Link: 'https://github.com'
+      Github_Link: 'https://github.com/hevardhan/'
     },
     {
       Name: 'Manan Bhimjiyani',
       Position: 'Flutter Lead',
-      Facebook_Link: 'https://www.instagram.com',
+      Facebook_Link: 'https://www.instagram.com/mananbhimjiyani/',
       Linkedin_Link: 'https://www.linkedin.com/in/mananbhimjiyani/',
-      Github_Link: 'https://github.com'
+      Github_Link: 'https://github.com/mananbhimjiyani'
     },
     {
       Name: 'Yash Parkhi',
       Position: 'GameDev Lead',
-      Facebook_Link: 'https://www.instagram.com',
+      Facebook_Link: 'https://www.instagram.com/_yiungyiung/',
       Linkedin_Link: 'https://www.linkedin.com/in/yash-parkhi-737773217/',
-      Github_Link: 'https://github.com'
+      Github_Link: 'https://github.com/yiungyiung'
     },
     {
       Name: 'Gautam Rajhans',
       Position: 'Cloud Lead',
-      Facebook_Link: 'https://www.instagram.com',
+      Facebook_Link: 'https://www.instagram.com/gprajhans/',
       Linkedin_Link: 'https://www.linkedin.com/in/gautam-rajhans-06b648198/',
-      Github_Link: 'https://github.com'
+      Github_Link: 'https://github.com/capricode-ui'
     },
     {
       Name: 'Dhairya Mehra',
       Position: 'DevOps Lead',
-      Facebook_Link: 'https://www.instagram.com',
+      Facebook_Link: 'https://www.instagram.com/dhairya_mehra_1611/',
       Linkedin_Link: 'https://www.linkedin.com/in/dhairya-mehra-705a36203/',
-      Github_Link: 'https://github.com'
+      Github_Link: 'https://github.com/Dhairya-A-Mehra'
     },
     {
       Name: 'Soham Phadke',
       Position: 'Android Lead',
-      Facebook_Link: 'https://www.instagram.com',
+      Facebook_Link: 'https://www.instagram.com/_sohhhhaamm_/',
       Linkedin_Link: 'https://www.linkedin.com/in/soham-phadke-b18673241/',
-      Github_Link: 'https://github.com'
+      Github_Link: 'https://github.com/cxder-soham'
     },
     {
       Name: 'Aaradhya Badal',
       Position: 'AI Lead',
-      Facebook_Link: 'https://www.instagram.com',
+      Facebook_Link: 'https://www.instagram.com/aaradhya_badal/',
       Linkedin_Link: 'https://www.linkedin.com/in/aaradhya-badal-502777249/',
-      Github_Link: 'https://github.com'
+      Github_Link: 'https://www.kaggle.com/aaradhyabadal'
     },
     {
       Name: 'Ria Vinod',
       Position: 'Socials Lead',
-      Facebook_Link: 'https://www.instagram.com',
+      Facebook_Link: 'https://www.instagram.com/riavinod_/',
       Linkedin_Link: 'https://www.linkedin.com/in/ria-vinod/',
-      Github_Link: 'https://github.com'
+      Github_Link: 'https://github.com/riavinod10'
     }
   ];
 
